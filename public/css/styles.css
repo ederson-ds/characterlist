@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,900");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    margin: 0;
+    max-width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    height: 50px;
+    background: black;
+    display: flex;
+}
+
+/* Logo */
+.logo {
+    max-width: 240px;
+    color: white;
+    font-size: 35px;
+}
+
+.logo:hover {
+    color: white;
+}
+
+/* Menu Hamburguer */
+#checkbox-menu {
+    position: absolute;
+    opacity: 0;
+    display: none;
+}
+
+.hamburguer {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    height: 22px;
+    width: 30px;
+    top: 14px;
+    margin-left: 10px;
+}
+
+.hamburguer span {
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 100%;
+    border-radius: 30px;
+    background: #f16234;
+    transition: 0.25s ease-in-out;
+}
+
+.hamburguer span:nth-child(1) {
+    top: 0;
+}
+
+.hamburguer span:nth-child(2) {
+    top: 8px;
+}
+
+.hamburguer span:nth-child(3) {
+    top: 16px;
+}
+
+#checkbox-menu:checked + .hamburguer span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 8px;
+}
+
+#checkbox-menu:checked + .hamburguer span:nth-child(2) {
+    opacity: 0;
+}
+
+#checkbox-menu:checked + .hamburguer span:nth-child(3) {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    position: absolute;
+    height: 100%;
+    background: #f3f3f3;
+    border-right: 1px solid #dbdbdb;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-menu > li > a {
+    border-top: 1px solid #fff;
+    padding: 12px 5px 12px 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+.sidebar-menu > li > a > span {
+    margin-right: 5px;
+}
+
+.sidebar-menu > li {
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    cursor: pointer;
+}
+
+.sidebar-menu > li:hover {
+    background: #f9f9f9;
+}
+
+.pull-right {
+    float: right;
+}
+
+.treeview-menu > li > a {
+    display: block;
+    color: gray;
+}
+
+.treeview-menu > li > a:hover {
+    color: black;
+}
+
+/* Content */
+.content {
+    margin-left: 240px;
+}
+
+/* Datatable */
+
+/* Datatable pagination */
+.paginacao {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.paginaAtiva {
+    border-color: #f16234;
+}
+
+/* Datatable columns */
+table > thead > tr > th {
+    cursor: pointer;
+}
+
+table > thead > tr > th.active:after {
+    content: "\25bc";
+}
+
+table > thead > tr > th[column="acoes"] {
+    cursor: default;
+}
+
+/* Add page*/
+.required:after {
+    content: " *";
+    color: red;
+}
+
+/* Styles */
+.mainContainer {
+    position: relative;
+    width: 100%;
+}
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: #003147;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navigation.active {
+    width: 60px;
+}
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+.navigation ul li:hover {
+    background: #03a9f4;
+}
+.navigation ul li:nth-child(1) {
+    margin-bottom: 20px;
+}
+.navigation ul li:nth-child(1):hover {
+    background: transparent;
+}
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.navigation ul li a .icon .fa {
+    color: #fff;
+    font-size: 24px;
+}
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #f5f5f5;
+    transition: 0.5s;
+}
+.main.active {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+.main .topbar {
+    width: 100%;
+    background: #fff;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+.toggle::before {
+    content: "\f0c9";
+    font-family: fontAwesome;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    color: #111;
+}
+/* Responsive */
+@media (max-width: 992px) {
+    .navigation {
+        left: -300px;
+    }
+    .navigation.active {
+        left: 0;
+        width: 300px;
+    }
+    .main {
+        width: 100%;
+        left: 0;
+    }
+    .main.active {
+        width: calc(100% - 300px);
+        left: 300px;
+    }
+}
+
+.invalid {
+    border-color: #dc3545;
+}
+
+/* Rarities */
+
+.very-rare {
+    background: #073763;
+    color: #3d85c6;
+}
+
+.epic {
+    background: #4c1130;
+    color: #a64d79;
+}
+
+.legendary {
+    background: #7f6000;
+    color: #f1c232;
+}
+
+.common {
+    background: #666666;
+    color: #cccccc;
+}
+
+.rare {
+    background: #274e13;
+    color: #6aa84f;
+}
+
+.empyrean {
+    background: #8e7cc3;
+    color: #d9d2e9;
+}
+
+.true-divinity {
+    background: #8910af;
+    color: #e57aff;
+}
+
+.void-tier {
+    background: #000000;
+    color: #434343;
+}
+
+.god {
+    background: #f3f3f3;
+    color: #b4a7d6;
+}
