@@ -1,6 +1,6 @@
 <?php
 
-require "rb.php";
+require_once "rb.php";
 
 class SignUpModel extends CI_Model
 {
@@ -10,9 +10,22 @@ class SignUpModel extends CI_Model
     public $password;
     public $accessLevel;
 
+    public function __construct()
+    {
+        if (!R::testConnection()) {
+            R::setup(
+                'pgsql:host=queenie.db.elephantsql.com;dbname=xozjhrue',
+                'xozjhrue',
+                'DGg0bVDqZCFps1hg5oRrs57DKxB5LYF5'
+            );
+        }
+    }
+
     public function insert()
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $signup = R::dispense($this->table);
         $signup->firstName = $this->firstName;
         $signup->email = $this->email;
