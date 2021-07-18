@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class AddSeries extends CI_Controller
+class Addseries extends CI_Controller
 {
 	public function index()
 	{

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class AddCharacter extends CI_Controller
+class Addcharacter extends CI_Controller
 {
 	private $rarities = ["Very Rare", "Epic", "Legendary", "Common", "Rare", "Empyrean", "True Divinity", "Void Tier", "God"];
 	private $genders = ["Male", "Female", "Genderless", "Androgenous", "Unknown", "Multiple", "Other"];
