@@ -1,9 +1,0 @@
-CRITICAL - 2021-07-15 13:57:41 --> Invalid file: signup.php
-#0 C:\xampp\htdocs\characterlist\system\View\View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signup.php')
-#1 C:\xampp\htdocs\characterlist\system\Common.php(1271): CodeIgniter\View\View->render('signup', Array, true)
-#2 C:\xampp\htdocs\characterlist\app\Controllers\SignUp.php(10): view('signup')
-#3 C:\xampp\htdocs\characterlist\system\CodeIgniter.php(928): App\Controllers\SignUp->index()
-#4 C:\xampp\htdocs\characterlist\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignUp))
-#5 C:\xampp\htdocs\characterlist\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#6 C:\xampp\htdocs\characterlist\index.php(37): CodeIgniter\CodeIgniter->run()
-#7 {main}
